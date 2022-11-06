@@ -23,7 +23,7 @@ function useFetch() {
       })
       .catch((error) => {
         // handleError(error)
-        setError("Something went wrongs")
+        setError("Something went wrong")
         setLoading(false)
       });
   }, [url]);

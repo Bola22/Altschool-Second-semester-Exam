@@ -9,7 +9,7 @@ import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlined";
 import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlined";
 import Loading from "../../compunents/loader/Loader";
-import ErrorBoundary from "../../compunents/ErrorBoundary";
+import ErrorBoundary from "../../compunents/errorboundary/ErrorBoundary";
 
 import "./home.scss";
 function Home() {
@@ -51,9 +51,11 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className="home">
       {error && <ErrorBoundary err={error} />}
-      <div className="navbar">
+      {!error && (
+        <div>
+          <div className="navbar">
         <div className="left">
           <div className="logo">
             <span>Basit's Github</span>
@@ -65,8 +67,10 @@ function Home() {
           <img src={profile.avatar_url} alt="Avatar" className="avatar" />
         </div>
         <div className="right">
+          <div className="userName">
           <h1>{profile.login}</h1>
-          <h2>{profile.name}</h2>
+          {/* <h2>{profile.name}</h2> */}
+          </div>
           <p>{profile.bio}</p>
           <div className="btn-container">
             <PeopleOutlinedIcon />
@@ -93,7 +97,9 @@ function Home() {
             return (
               <Link to={`/repo/${item.name}`} className="tile" key={item.id}>
                 <h2>{item.name}</h2>
-                <h3>{item.language}</h3>
+                <h3>{item.language == null
+                    ? "Language Not Available"
+                    : item.language}</h3>
                 <p>
                   {item.description == null
                     ? "Description Not Available"
@@ -144,6 +150,8 @@ function Home() {
           </button>
         </div>
       </div>
+        </div>
+      )}
     </div>
   );
 }

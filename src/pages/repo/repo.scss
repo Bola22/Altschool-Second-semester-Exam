@@ -1,0 +1,13 @@
+.repo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .details{
+        background: hsl(0, 0%, 22%);
+        padding: 30px;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+}
