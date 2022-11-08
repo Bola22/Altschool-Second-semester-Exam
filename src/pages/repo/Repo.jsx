@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Loading from "../../compunents/loader/Loader"
 import ErrorBoundary from "../../compunents/errorboundary/ErrorBoundary"
 import "./repo.scss"
+import {Helmet} from "react-helmet"
 
 function Repo() {
   const { id } = useParams();

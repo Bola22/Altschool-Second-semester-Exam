@@ -3,6 +3,7 @@ import Home from "./pages/home/Home"
 import Error from "./pages/error/Error";
 import Repo from "./pages/repo/Repo"
 import './App.css';
+import {Helmet} from "react-helmet"
 
 function App() {
   return (

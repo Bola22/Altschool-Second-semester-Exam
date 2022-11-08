@@ -10,6 +10,7 @@ import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlin
 import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlined";
 import Loading from "../../compunents/loader/Loader";
 import ErrorBoundary from "../../compunents/errorboundary/ErrorBoundary";
+import {Helmet} from "react-helmet"
 
 import "./home.scss";
 function Home() {
@@ -52,6 +53,10 @@ function Home() {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>Basit's GitHub Profile</title>
+        <meta name="description" content="Basit's GitHub Profile Info" />
+      </Helmet>
       {error && <ErrorBoundary err={error} />}
       {!error && (
         <div>
